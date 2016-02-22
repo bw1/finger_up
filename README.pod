@@ -1,0 +1,28 @@
+=pod
+
+=encoding utf8
+
+=head1 Installation
+
+Datei in ein Verzeichnis kopieren, das in der B<PATH> Variable 
+erwähnt wird.
+
+Eventuell die fehlenden Bibliotheken ergänzen.
+
+	$ sudo cpan -i LWP::UserAgent;
+	$ sudo cpan -i HTML::Form;
+	$ sudo cpan -i HTML::Parser;
+	$ sudo cpan -i DateTime;
+
+=head1 Ausführen
+
+B<finger_up.pl> [Optionen] <Datei> [alt Text]
+
+	-t Verfallsdatum 1 Tag
+	-1 Verfallsdatum 1 Monat
+	-3 Verfallsdatum 3 Monate
+	-s <Skalierungsfaktor>
+
+=cut
+
+
