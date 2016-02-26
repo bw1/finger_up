@@ -2,6 +2,13 @@
 
 =encoding utf8
 
+=head1 finger_up.pl
+
+Schiebt Datensalat auf den Imagehost vom Finger hoch.
+
+Das ganze direkt im schwarzen Fenster. 
+Ein B<perl> Interpret sollte vorhanden sein.
+
 =head1 Installation
 
 Datei in ein Verzeichnis kopieren, das in der B<PATH> Variable 
