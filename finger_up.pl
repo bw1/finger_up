@@ -2,11 +2,16 @@
 #
 # hochladen von einem bild auf den finger server
 #
+use utf8;
+use open ":locale";
+
 use HTML::Form;
 use LWP::UserAgent;
 use HTML::Parser;
 use Getopt::Std;
 use DateTime;
+use File::Copy qw(copy);
+
 
 # die adresse des servers
 $base_uri="http://www.fingers-welt.de/imghost/";
@@ -60,6 +65,25 @@ my $fn =shift @ARGV;
 if ( ! -f $fn ) {
 	print "Error: Datei '$fn' nicht gefunden\n";
 	exit(1);
+}
+
+
+utf8::decode($fn);
+
+# Dateiname 
+my $fna=$fn;
+$fn =~ s/ä/ae/g;
+$fn =~ s/ö/oe/g;
+$fn =~ s/ü/ue/g;
+$fn =~ s/ß/sz/g;
+$fn =~ s/Ä/Ae/g;
+$fn =~ s/Ö/Oe/g;
+$fn =~ s/Ü/Ue/g;
+
+
+if ($fna ne $fn) {
+	copy $fna,$fn;
+	print "copy $fna\t$fn\n";
 }
 
 # alt Text
